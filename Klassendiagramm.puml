@@ -1,0 +1,23 @@
+@startuml
+!pragma layout smetana
+class Toaster {
+  - capacity: Int
+  - slices: Int
+  - color: String
+  + Toaster(capacity: Int, slices: Int, color: String)
+  + setSlices(newSlices: Int): Unit
+  + toast(): Unit
+  + displayInfo(): Unit
+}
+
+class SuperToaster {
+  - temperature: Int
+  + SuperToaster(capacity: Int, slices: Int, color: String, temperature: Int)
+  + adjustTemperature(newTemperature: Int): Unit
+  + toast(numberOfToasts: Int, toastingTime: Int): Unit
+  + displayTemperature(): Unit
+  + getRandomNumber(): Int
+}
+
+Toaster --|> SuperToaster : extends
+@enduml

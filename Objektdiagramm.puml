@@ -1,0 +1,19 @@
+@startuml
+!pragma layout smetana
+
+object myToaster
+object mySuperToaster
+
+myToaster : capacity = 2
+myToaster : slices = 4
+myToaster : color = "silver"
+
+mySuperToaster : capacity = 2
+mySuperToaster : slices = 4
+mySuperToaster : color = "silver"
+mySuperToaster : temperature = 200
+
+myToaster --|> mySuperToaster
+
+
+@enduml

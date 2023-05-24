@@ -1,4 +1,5 @@
 import java.util.Scanner
+import kotlin.random.Random
 fun main() {
     val scanner = Scanner(System.`in`)
     println("Enter the number of slices:")
@@ -7,13 +8,12 @@ fun main() {
     println("Enter the toasting time (in minutes):")
     val toastingTime = scanner.nextInt()
 
-    val myToaster = Toaster(2, numberOfSlices, "red")
+    //val myToaster = Toaster(2, numberOfSlices, "red")
+    val mySuperToaster = SuperToaster(4, numberOfSlices, "green", Random.nextInt(300, 700))
 
-
-    myToaster.toast(numberOfSlices, toastingTime)
-
-    if (myToaster.slices <= myToaster.capacity)
-        myToaster.displayInfo()
+    mySuperToaster.toast(numberOfSlices, toastingTime)
+    if (mySuperToaster.slices <= mySuperToaster.capacity)
+        mySuperToaster.displayInfo()
     else
         return
 }

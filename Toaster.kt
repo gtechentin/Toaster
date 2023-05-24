@@ -1,8 +1,10 @@
-class Toaster(val capacity: Int, val slices: Int, val color: String) {
-    fun toast(numberOfToasts: Int, toastingTime: Int) {
+open class Toaster(val capacity: Int, val slices: Int, val color: String) {
+    open fun toast(numberOfToasts: Int, toastingTime: Int) {
         if (numberOfToasts <= capacity && toastingTime > 0) {
+            println("Starting toasting process...")
             println("Toasting $numberOfToasts slices of bread in the $color toaster.")
             val browningLevel = calculateBrowningLevel(toastingTime)
+            println("Toasting finished.")
             println("Toast is $browningLevel.")
         }
         else if (capacity < numberOfToasts) {
